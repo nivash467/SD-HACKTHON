@@ -1,0 +1,150 @@
+:root {
+  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  /* Premium Beige & Gold Palette */
+  --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f3efe7 100%);
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 10px 40px -10px rgba(78, 70, 55, 0.1);
+  
+  /* Typography */
+  --text-primary: #000000; /* Jet black for maximum contrast */
+  --text-secondary: #2d2a28; /* Very dark warm gray */
+  
+  /* Accents */
+  --accent: #b49162; /* Muted Gold/Bronze */
+  --accent-glow: 0 0 25px rgba(180, 145, 98, 0.3);
+  --card-hover: rgba(255, 255, 255, 0.8);
+  
+  /* Action Colors */
+  --success: #3f6212;
+  --error: #991b1b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px; /* Scales up entire UI */
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f3efe7;
+  /* Added a semi-transparent beige overlay to enhance text readability */
+  background-image: linear-gradient(rgba(243, 239, 231, 0.85), rgba(243, 239, 231, 0.85)), url('C:\mernstack\client\src\assets\boutique-clothes-clothing-264554.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
+
+.glass-panel {
+  background: rgba(252, 250, 245, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(180, 145, 98, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(180, 145, 98, 0.5);
+  background: #a38153;
+}
+
+.btn-glass {
+  background: rgba(44, 39, 36, 0.05);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(44, 39, 36, 0.1);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-glass:hover {
+  background: rgba(44, 39, 36, 0.1);
+  border-color: rgba(44, 39, 36, 0.2);
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d3ce;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b0aca6;
+}
